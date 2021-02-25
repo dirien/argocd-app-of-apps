@@ -3,6 +3,10 @@ kind: Application
 metadata:
   name: hello-server-domain
   namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: hello=ediri/hello-server
+    argocd-image-updater.argoproj.io/hello.helm.image-name: hello.image.name
+    argocd-image-updater.argoproj.io/hello.helm.image-tag: hello.image.tag
 spec:
   destination:
     namespace: hello-argo
