@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  name: hello-server-domain
+  namespace: hello-argocd
+spec:
+  destination:
+    namespace: hello-argocd
+    name: scw-cluster
+  project: default
+  source:
+    path: delivery/charts/hello-server
+    repoURL: 'https://github.com/dirien/helloserver.git'
+    targetRevision: HEAD
+    helm:
+      parameters:
+        - name: service.type
+          value: LoadBalancer
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
+
