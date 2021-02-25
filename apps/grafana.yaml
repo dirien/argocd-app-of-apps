@@ -21,6 +21,7 @@ spec:
         - name: ingress.enabled
           value: 'true'
   syncPolicy:
+    automated: {}
     syncOptions:
       - CreateNamespace=true
 
