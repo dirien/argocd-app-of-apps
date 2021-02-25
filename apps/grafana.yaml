@@ -6,7 +6,8 @@ metadata:
 spec:
   destination:
     namespace: grafana
-    server: 'https://kubernetes.default.svc'
+    server: https://kubernetes.default.svc
+  project: default
   source:
     repoURL: 'https://grafana.github.io/helm-charts'
     targetRevision: 6.4.4
@@ -20,4 +21,4 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
-  project: default
+
