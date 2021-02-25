@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hello-server-domain
+  namespace: argocd
+spec:
+  destination:
+    namespace: hello-argo
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: delivery/charts/hello-server
+    repoURL: https://github.com/dirien/helloserver.git
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
