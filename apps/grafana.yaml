@@ -16,4 +16,7 @@ spec:
           value: grafana.ediri.online
         - name: ingress.enabled
           value: 'true'
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
   project: default
