@@ -17,7 +17,7 @@ spec:
       parameters:
         - name: service.type
           value: LoadBalancer
-  chart: grafana
+    chart: grafana
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
