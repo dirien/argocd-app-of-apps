@@ -4,7 +4,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   name: hello-server-domain
-  namespace: hello-argocd
+  namespace: argocd
 spec:
   destination:
     namespace: hello-argocd
